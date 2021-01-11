@@ -95,6 +95,11 @@ func (v Vec) Scaled(n float64) Vec {
 	return NewVec(v.E[0]*n, v.E[1]*n, v.E[2]*n)
 }
 
+// Dot returns the dot product of two vectors
+func (v Vec) Dot(v2 Vec) float64 {
+	return v.E[0]*v2.E[0] + v.E[1]*v2.E[1] + v.E[2]*v2.E[2]
+}
+
 // Cross returns the cross product of two vectors.
 func (v Vec) Cross(v2 Vec) Vec {
 	return NewVec(
